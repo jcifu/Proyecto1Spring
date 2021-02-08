@@ -1,3 +1,6 @@
+cl\duoc\Proyecto1Spring\service\PersonaService.class
 cl\duoc\Proyecto1Spring\web\ControladorInicio.class
 cl\duoc\Proyecto1Spring\domain\Persona.class
+cl\duoc\Proyecto1Spring\service\PersonaServiceImplementation.class
+cl\duoc\Proyecto1Spring\dao\PersonaDAO.class
 cl\duoc\Proyecto1Spring\Proyecto1SpringApplication.class

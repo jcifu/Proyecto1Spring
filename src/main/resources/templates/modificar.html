@@ -1,0 +1,18 @@
+<htmlxlmns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Datos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Formulario</h1>
+            <!-- @{/} hace referencia a ruta "/" definida en 
+            GetMapping de otros métodos -->
+            <a href="@{/}">Regresar</a>
+            <form th:action="@{/guardar}" method="post" th:object="${persona}">
+                
+            </form>
+        </div>
+    </body>
+</html>

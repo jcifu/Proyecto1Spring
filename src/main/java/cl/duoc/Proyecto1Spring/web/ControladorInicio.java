@@ -2,15 +2,12 @@ package cl.duoc.Proyecto1Spring.web;
 
 import cl.duoc.Proyecto1Spring.domain.Persona;
 import cl.duoc.Proyecto1Spring.service.PersonaService;
-// import java.util.ArrayList;
-// import java.util.Arrays;
-// import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
@@ -48,7 +45,33 @@ public class ControladorInicio {
         var personas= personaService.listarPersonas();
         modelo.addAttribute("personas", personas);
         return "index";
-        //Thymeleaf trabaja con html, puede con jsp pero no es lo optimo
-}
+        //Thymeleaf trabaja con html, puede con jsp pero no es lo optimo   
+    }
+    /**
+     * Desde Index se presionara un link paa llevarnos a la página de modificar.html
+     * Cuando presione el link en la url se mostrará la palabra agregar en vez del
+     * nombre del archivo
+     * @param
+     * @return
+     */
+    @GetMapping("/agregar")
+    public String agregar(Persona persona){
+        return "modificar";
+    }
     
+    /**
+     * Al presionar guardar en el formulario 
+     * (considerando que el boton debe ser un submit),
+     * se enviará los datos a procesar en PersonaService 
+     * para almacenar el objeto Persona 
+     * @param persona
+     * @return 
+     */
+    @PostMapping("/guardar")
+    public String guardar(Persona persona){
+        personaService.guardar(persona);
+        
+        //redirigir a la pantalla principal o raíz "/"
+        return "redirect:/";
+    }
 }

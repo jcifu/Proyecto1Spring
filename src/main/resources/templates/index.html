@@ -16,6 +16,7 @@
         Thymeleaf
         <p "${mensaje}"></p>
         -->
+        <a th:href="@{/agregar}"> Crear Persona</a>
         <div th:if="${personas!=null and !personas.empty}">
             <table border="1">
                 <tr>
